@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881A437519CAD76C00C97ABB /* SMTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 881A437419CAD76C00C97ABB /* SMTTask.m */; };
+		881A437819CADBCA00C97ABB /* SMTTaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */; };
 		888B015019C98D010075FBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B014F19C98D010075FBA4 /* Foundation.framework */; };
 		888B015219C98D010075FBA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015119C98D010075FBA4 /* CoreGraphics.framework */; };
 		888B015419C98D010075FBA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015319C98D010075FBA4 /* UIKit.framework */; };
@@ -14,13 +16,16 @@
 		888B015C19C98D010075FBA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B015B19C98D010075FBA4 /* main.m */; };
 		888B016019C98D010075FBA4 /* SMTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B015F19C98D010075FBA4 /* SMTAppDelegate.m */; };
 		888B016319C98D010075FBA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888B016119C98D010075FBA4 /* Main.storyboard */; };
-		888B016619C98D020075FBA4 /* SMTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B016519C98D020075FBA4 /* SMTViewController.m */; };
 		888B016819C98D020075FBA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888B016719C98D020075FBA4 /* Images.xcassets */; };
 		888B016F19C98D020075FBA4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B016E19C98D020075FBA4 /* XCTest.framework */; };
 		888B017019C98D020075FBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B014F19C98D010075FBA4 /* Foundation.framework */; };
 		888B017119C98D020075FBA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015319C98D010075FBA4 /* UIKit.framework */; };
 		888B017919C98D020075FBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 888B017719C98D020075FBA4 /* InfoPlist.strings */; };
 		888B017B19C98D020075FBA4 /* Overdue_Task_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B017A19C98D020075FBA4 /* Overdue_Task_ListTests.m */; };
+		888B018619C990200075FBA4 /* SMTTaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B018519C990200075FBA4 /* SMTTaskListViewController.m */; };
+		888B018A19C990680075FBA4 /* SMTAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B018919C990680075FBA4 /* SMTAddTaskViewController.m */; };
+		888B018D19C9907C0075FBA4 /* SMTTaskDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B018C19C9907C0075FBA4 /* SMTTaskDetailsViewController.m */; };
+		888B019019C990910075FBA4 /* SMTEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B018F19C990910075FBA4 /* SMTEditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		881A437319CAD76C00C97ABB /* SMTTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTask.h; sourceTree = "<group>"; };
+		881A437419CAD76C00C97ABB /* SMTTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTask.m; sourceTree = "<group>"; };
+		881A437619CADBCA00C97ABB /* SMTTaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTaskListTableViewController.h; sourceTree = "<group>"; };
+		881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTaskListTableViewController.m; sourceTree = "<group>"; };
 		888B014C19C98D010075FBA4 /* Overdue Task List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overdue Task List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888B014F19C98D010075FBA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		888B015119C98D010075FBA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +54,20 @@
 		888B015E19C98D010075FBA4 /* SMTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTAppDelegate.h; sourceTree = "<group>"; };
 		888B015F19C98D010075FBA4 /* SMTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTAppDelegate.m; sourceTree = "<group>"; };
 		888B016219C98D010075FBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		888B016419C98D010075FBA4 /* SMTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTViewController.h; sourceTree = "<group>"; };
-		888B016519C98D020075FBA4 /* SMTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTViewController.m; sourceTree = "<group>"; };
 		888B016719C98D020075FBA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		888B016D19C98D020075FBA4 /* Overdue Task ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overdue Task ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888B016E19C98D020075FBA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		888B017619C98D020075FBA4 /* Overdue Task ListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue Task ListTests-Info.plist"; sourceTree = "<group>"; };
 		888B017819C98D020075FBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		888B017A19C98D020075FBA4 /* Overdue_Task_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_ListTests.m; sourceTree = "<group>"; };
+		888B018419C990200075FBA4 /* SMTTaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMTTaskListViewController.h; path = ../SMTTaskListViewController.h; sourceTree = "<group>"; };
+		888B018519C990200075FBA4 /* SMTTaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMTTaskListViewController.m; path = ../SMTTaskListViewController.m; sourceTree = "<group>"; };
+		888B018819C990680075FBA4 /* SMTAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTAddTaskViewController.h; sourceTree = "<group>"; };
+		888B018919C990680075FBA4 /* SMTAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTAddTaskViewController.m; sourceTree = "<group>"; };
+		888B018B19C9907C0075FBA4 /* SMTTaskDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTaskDetailsViewController.h; sourceTree = "<group>"; };
+		888B018C19C9907C0075FBA4 /* SMTTaskDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTaskDetailsViewController.m; sourceTree = "<group>"; };
+		888B018E19C990910075FBA4 /* SMTEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTEditTaskViewController.h; sourceTree = "<group>"; };
+		888B018F19C990910075FBA4 /* SMTEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTEditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881A437219CAD74300C97ABB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				881A437319CAD76C00C97ABB /* SMTTask.h */,
+				881A437419CAD76C00C97ABB /* SMTTask.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		888B014319C98D010075FBA4 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +136,19 @@
 		888B015519C98D010075FBA4 /* Overdue Task List */ = {
 			isa = PBXGroup;
 			children = (
-				888B015E19C98D010075FBA4 /* SMTAppDelegate.h */,
-				888B015F19C98D010075FBA4 /* SMTAppDelegate.m */,
+				881A437219CAD74300C97ABB /* Model */,
+				888B018719C9903C0075FBA4 /* AppDelegate */,
 				888B016119C98D010075FBA4 /* Main.storyboard */,
-				888B016419C98D010075FBA4 /* SMTViewController.h */,
-				888B016519C98D020075FBA4 /* SMTViewController.m */,
+				881A437619CADBCA00C97ABB /* SMTTaskListTableViewController.h */,
+				881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */,
+				888B018819C990680075FBA4 /* SMTAddTaskViewController.h */,
+				888B018919C990680075FBA4 /* SMTAddTaskViewController.m */,
+				888B018E19C990910075FBA4 /* SMTEditTaskViewController.h */,
+				888B018F19C990910075FBA4 /* SMTEditTaskViewController.m */,
+				888B018B19C9907C0075FBA4 /* SMTTaskDetailsViewController.h */,
+				888B018C19C9907C0075FBA4 /* SMTTaskDetailsViewController.m */,
+				888B018419C990200075FBA4 /* SMTTaskListViewController.h */,
+				888B018519C990200075FBA4 /* SMTTaskListViewController.m */,
 				888B016719C98D020075FBA4 /* Images.xcassets */,
 				888B015619C98D010075FBA4 /* Supporting Files */,
 			);
@@ -150,6 +182,15 @@
 				888B017719C98D020075FBA4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		888B018719C9903C0075FBA4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				888B015E19C98D010075FBA4 /* SMTAppDelegate.h */,
+				888B015F19C98D010075FBA4 /* SMTAppDelegate.m */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888B016619C98D020075FBA4 /* SMTViewController.m in Sources */,
+				888B018A19C990680075FBA4 /* SMTAddTaskViewController.m in Sources */,
 				888B015C19C98D010075FBA4 /* main.m in Sources */,
+				881A437819CADBCA00C97ABB /* SMTTaskListTableViewController.m in Sources */,
+				888B018D19C9907C0075FBA4 /* SMTTaskDetailsViewController.m in Sources */,
+				888B018619C990200075FBA4 /* SMTTaskListViewController.m in Sources */,
+				888B019019C990910075FBA4 /* SMTEditTaskViewController.m in Sources */,
+				881A437519CAD76C00C97ABB /* SMTTask.m in Sources */,
 				888B016019C98D010075FBA4 /* SMTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +503,7 @@
 				888B018019C98D020075FBA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		888B018119C98D020075FBA4 /* Build configuration list for PBXNativeTarget "Overdue Task ListTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +512,7 @@
 				888B018319C98D020075FBA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
