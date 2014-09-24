@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMTTask.h"
+
+@protocol SMTEditTaskViewControllerDelegate <NSObject>
+
+@required
+
+-(void)saveTask:(SMTTask *)task;
+-(void)didCancel;
+
+@end
 
 @interface SMTEditTaskViewController : UIViewController
 
+@property (weak, nonatomic) id <SMTEditTaskViewControllerDelegate> delegate;
+
+@property (strong,nonatomic) SMTTask *task;
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
-@property (strong, nonatomic) IBOutlet UITextView *taskDescriptionField;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *dueDatePicker;
 
 - (IBAction)cancelEdit:(UIButton *)sender;

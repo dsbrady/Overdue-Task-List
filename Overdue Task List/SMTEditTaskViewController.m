@@ -26,7 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+	// Do any additional setup after loading the view.
+	self.titleField.text = self.task.title;
+	self.descriptionField.text = self.task.taskDescription;
+	self.dueDatePicker.date = self.task.dueDate;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +50,16 @@
 }
 */
 
-- (IBAction)cancelEdit:(UIButton *)sender {
+- (IBAction)cancelEdit:(UIButton *)sender
+{
+	[self.delegate didCancel];
 }
 
-- (IBAction)updateTask:(UIButton *)sender {
+- (IBAction)updateTask:(UIButton *)sender
+{
+	self.task.title = self.titleField.text;
+	self.task.taskDescription = self.descriptionField.text;
+	self.task.dueDate = self.dueDatePicker.date;
+	[self.delegate saveTask:self.task];
 }
 @end

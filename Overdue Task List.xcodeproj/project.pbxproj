@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		881A437519CAD76C00C97ABB /* SMTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 881A437419CAD76C00C97ABB /* SMTTask.m */; };
-		881A437819CADBCA00C97ABB /* SMTTaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */; };
 		888B015019C98D010075FBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B014F19C98D010075FBA4 /* Foundation.framework */; };
 		888B015219C98D010075FBA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015119C98D010075FBA4 /* CoreGraphics.framework */; };
 		888B015419C98D010075FBA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015319C98D010075FBA4 /* UIKit.framework */; };
@@ -41,8 +40,6 @@
 /* Begin PBXFileReference section */
 		881A437319CAD76C00C97ABB /* SMTTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTask.h; sourceTree = "<group>"; };
 		881A437419CAD76C00C97ABB /* SMTTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTask.m; sourceTree = "<group>"; };
-		881A437619CADBCA00C97ABB /* SMTTaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTaskListTableViewController.h; sourceTree = "<group>"; };
-		881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTaskListTableViewController.m; sourceTree = "<group>"; };
 		888B014C19C98D010075FBA4 /* Overdue Task List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overdue Task List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888B014F19C98D010075FBA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		888B015119C98D010075FBA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,8 +136,6 @@
 				881A437219CAD74300C97ABB /* Model */,
 				888B018719C9903C0075FBA4 /* AppDelegate */,
 				888B016119C98D010075FBA4 /* Main.storyboard */,
-				881A437619CADBCA00C97ABB /* SMTTaskListTableViewController.h */,
-				881A437719CADBCA00C97ABB /* SMTTaskListTableViewController.m */,
 				888B018819C990680075FBA4 /* SMTAddTaskViewController.h */,
 				888B018919C990680075FBA4 /* SMTAddTaskViewController.m */,
 				888B018E19C990910075FBA4 /* SMTEditTaskViewController.h */,
@@ -293,7 +288,6 @@
 			files = (
 				888B018A19C990680075FBA4 /* SMTAddTaskViewController.m in Sources */,
 				888B015C19C98D010075FBA4 /* main.m in Sources */,
-				881A437819CADBCA00C97ABB /* SMTTaskListTableViewController.m in Sources */,
 				888B018D19C9907C0075FBA4 /* SMTTaskDetailsViewController.m in Sources */,
 				888B018619C990200075FBA4 /* SMTTaskListViewController.m in Sources */,
 				888B019019C990910075FBA4 /* SMTEditTaskViewController.m in Sources */,

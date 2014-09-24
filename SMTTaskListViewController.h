@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SMTAddTaskViewController.h"
+#import "SMTTaskDetailsViewController.h"
 
-@interface SMTTaskListViewController : UIViewController <SMTAddTaskViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface SMTTaskListViewController : UIViewController <SMTAddTaskViewControllerDelegate,SMTTaskDetailsViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *tasks;
+@property (strong, nonatomic) IBOutlet UITableView *taskTableView;
+
+- (IBAction)goToAddTask:(UIBarButtonItem *)sender;
+- (IBAction)showReorderView:(UIBarButtonItem *)sender;
 
 @end
