@@ -85,7 +85,7 @@
 #pragma mark - SMTEditTaskViewControllerDelegate
 -(void)saveTask:(SMTTask *)task
 {
-	// Update this view's task and refresh the data
+	// Update this view's task and refresh the data (but we won't update the status until after the arrays have been saved in the delegate
 	self.task.title = task.title;
 	self.task.taskDescription = task.taskDescription;
 	self.task.dueDate = task.dueDate;

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		881A437519CAD76C00C97ABB /* SMTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 881A437419CAD76C00C97ABB /* SMTTask.m */; };
+		88682EA119D3470C0073D12A /* incomplete_40x40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88682E9E19D3470C0073D12A /* incomplete_40x40.jpg */; };
+		88682EA419D3496C0073D12A /* overdue_40x40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88682EA319D3496C0073D12A /* overdue_40x40.jpg */; };
+		88682EA619D349F50073D12A /* complete_40x40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88682EA519D349F50073D12A /* complete_40x40.jpg */; };
 		888B015019C98D010075FBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B014F19C98D010075FBA4 /* Foundation.framework */; };
 		888B015219C98D010075FBA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015119C98D010075FBA4 /* CoreGraphics.framework */; };
 		888B015419C98D010075FBA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888B015319C98D010075FBA4 /* UIKit.framework */; };
@@ -40,6 +43,9 @@
 /* Begin PBXFileReference section */
 		881A437319CAD76C00C97ABB /* SMTTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTTask.h; sourceTree = "<group>"; };
 		881A437419CAD76C00C97ABB /* SMTTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTTask.m; sourceTree = "<group>"; };
+		88682E9E19D3470C0073D12A /* incomplete_40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = incomplete_40x40.jpg; sourceTree = "<group>"; };
+		88682EA319D3496C0073D12A /* overdue_40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = overdue_40x40.jpg; sourceTree = "<group>"; };
+		88682EA519D349F50073D12A /* complete_40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = complete_40x40.jpg; sourceTree = "<group>"; };
 		888B014C19C98D010075FBA4 /* Overdue Task List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overdue Task List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888B014F19C98D010075FBA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		888B015119C98D010075FBA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +106,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		88682E9C19D3462B0073D12A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				88682EA519D349F50073D12A /* complete_40x40.jpg */,
+				88682EA319D3496C0073D12A /* overdue_40x40.jpg */,
+				88682E9E19D3470C0073D12A /* incomplete_40x40.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		888B014319C98D010075FBA4 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +169,7 @@
 		888B015619C98D010075FBA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88682E9C19D3462B0073D12A /* images */,
 				888B015719C98D010075FBA4 /* Overdue Task List-Info.plist */,
 				888B015819C98D010075FBA4 /* InfoPlist.strings */,
 				888B015B19C98D010075FBA4 /* main.m */,
@@ -266,6 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				888B016819C98D020075FBA4 /* Images.xcassets in Resources */,
+				88682EA119D3470C0073D12A /* incomplete_40x40.jpg in Resources */,
+				88682EA419D3496C0073D12A /* overdue_40x40.jpg in Resources */,
+				88682EA619D349F50073D12A /* complete_40x40.jpg in Resources */,
 				888B015A19C98D010075FBA4 /* InfoPlist.strings in Resources */,
 				888B016319C98D010075FBA4 /* Main.storyboard in Resources */,
 			);

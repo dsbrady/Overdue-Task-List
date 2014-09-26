@@ -57,6 +57,7 @@
 
 - (IBAction)updateTask:(UIButton *)sender
 {
+	// We won't update the status property until after we've used the current value in the delegate
 	self.task.title = self.titleField.text;
 	self.task.taskDescription = self.descriptionField.text;
 	self.task.dueDate = self.dueDatePicker.date;

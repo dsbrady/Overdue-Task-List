@@ -18,8 +18,26 @@
 	self.taskDescription = data[TASK_DESCRIPTION];
 	self.dueDate = data[TASK_DUE_DATE];
 	self.isComplete = [data[TASK_IS_COMPLETE] boolValue];
+	self.status = [self getStatus];
 
 	return self;
 }
 
+// We want this status to persist, so we won't set the private property
+-(NSString *)getStatus
+{
+	NSString *status = @"Incomplete";
+
+	if (self.isComplete)
+	{
+		status = @"Complete";
+	}
+	// Mark as overdue if the due date is before the current date
+	else if ([self.dueDate compare:[NSDate date]] == NSOrderedAscending)
+	{
+		status = @"Overdue";
+	}
+
+	return status;
+}
 @end

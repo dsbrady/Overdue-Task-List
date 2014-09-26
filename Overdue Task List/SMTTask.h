@@ -15,6 +15,10 @@
 @property (strong, nonatomic) NSDate *dueDate;
 @property (nonatomic) BOOL isComplete;
 
+// This will be a derived property based on isComplete and dueDate
+@property (strong, nonatomic) NSString *status;
+
 -(id) initWithData:(NSDictionary *)data;
 
+-(NSString *)getStatus;
 @end

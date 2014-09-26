@@ -12,7 +12,10 @@
 
 @interface SMTTaskListViewController : UIViewController <SMTAddTaskViewControllerDelegate,SMTTaskDetailsViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 
-@property (strong, nonatomic) NSMutableArray *tasks;
+@property (strong, nonatomic) NSMutableArray *overdueTasks;
+@property (strong, nonatomic) NSMutableArray *incompleteTasks;
+@property (strong, nonatomic) NSMutableArray *completeTasks;
+
 @property (strong, nonatomic) IBOutlet UITableView *taskTableView;
 
 - (IBAction)goToAddTask:(UIBarButtonItem *)sender;

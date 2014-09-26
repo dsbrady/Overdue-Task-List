@@ -14,7 +14,11 @@
 #define TASK_DESCRIPTION @"taskDescription"
 #define TASK_DUE_DATE @"dueDate"
 #define TASK_IS_COMPLETE @"isComplete"
-#define USER_TASKS_KEY @"Tasks Array"
+#define TASK_STATUS @"status"
+
+#define INCOMPLETETASKS_KEY @"Incomplete Tasks Array"
+#define COMPLETETASKS_KEY @"Complete Tasks Array"
+#define OVERDUETASKS_KEY @"Overdue Tasks Array"
 
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
