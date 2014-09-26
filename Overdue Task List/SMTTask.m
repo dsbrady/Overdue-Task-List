@@ -18,7 +18,8 @@
 	self.taskDescription = data[TASK_DESCRIPTION];
 	self.dueDate = data[TASK_DUE_DATE];
 	self.isComplete = [data[TASK_IS_COMPLETE] boolValue];
-	self.status = [self getStatus];
+	// TODO: remove
+//	self.status = [self getStatus];
 
 	return self;
 }

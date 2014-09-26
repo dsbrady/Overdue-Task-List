@@ -241,107 +241,6 @@
 	[self.taskTableView reloadData];
 }
 
-// TODO: move to helper functions pragma
--(void) updateTaskArrays
-{
-	NSMutableArray *fromArray = [[NSMutableArray alloc] init];
-	NSMutableArray *toArray = [[NSMutableArray alloc] init];
-	NSString *status = @"";
-
-	// loop over the incomplete array
-	fromArray = self.incompleteTasks;
-	for (SMTTask *task in fromArray)
-	{
-		status = [task getStatus];
-		if ([status isEqualToString:@"Overdue"])
-		{
-			// Is now overdue
-			toArray = self.overdueTasks;
-		}
-		else if ([status isEqualToString:@"Complete"])
-		{
-			// Is now complete
-			toArray = self.completeTasks;
-		}
-		else
-		{
-			// Same array, so go to the next task
-			NSLog(@"here2");
-			continue;
-		}
-
-		// Delete from the original array
-		[fromArray removeObject:task];
-
-		// Insert into the new array
-		[toArray addObject:task];
-	}
-
-	// loop over the overdue array
-	fromArray = self.overdueTasks;
-	for (SMTTask *task in fromArray)
-	{
-		status = [task getStatus];
-		if ([status isEqualToString:@"Incomplete"])
-		{
-			// Is now incomplete
-			toArray = self.incompleteTasks;
-		}
-		else if ([status isEqualToString:@"Complete"])
-		{
-			// Is now complete
-			toArray = self.completeTasks;
-		}
-		else
-		{
-			// Same array, so go to the next task
-			NSLog(@"here");
-			continue;
-		}
-		NSLog(@"%@",fromArray);
-		NSLog(@"%@",task.title);
-		// Delete from the original array
-		[fromArray removeObject:task];
-
-		// Insert into the new array
-		[toArray addObject:task];
-	}
-
-	// loop over the complete array
-	fromArray = self.completeTasks;
-	for (SMTTask *task in fromArray)
-	{
-		status = [task getStatus];
-		if ([status isEqualToString:@"Incomplete"])
-		{
-			// Is now incomplete
-			toArray = self.incompleteTasks;
-		}
-		else if ([status isEqualToString:@"Overdue"])
-		{
-			// Is now overdue
-			toArray = self.overdueTasks;
-		}
-		else
-		{
-			// Same array, so go to the next task
-			continue;
-		}
-
-		// Delete from the original array
-		[fromArray removeObject:task];
-
-		// Insert into the new array
-		[toArray addObject:task];
-	}
-
-	// Now save all 3 arrays
-//	[self saveTasks:self.incompleteTasks forDefaultKey:INCOMPLETETASKS_KEY];
-//	[self saveTasks:self.completeTasks forDefaultKey:COMPLETETASKS_KEY];
-//	[self saveTasks:self.overdueTasks forDefaultKey:OVERDUETASKS_KEY];
-
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -563,11 +462,121 @@
 								 TASK_TITLE: task.title,
 								 TASK_DESCRIPTION: task.taskDescription,
 								 TASK_DUE_DATE: task.dueDate,
-								 TASK_IS_COMPLETE: @(task.isComplete),
-								 TASK_STATUS: task.status
+								 TASK_IS_COMPLETE: @(task.isComplete)
+								 // TODO: remove
+								 //								 ,
+//								 TASK_STATUS: task.status
 								 };
 
 	return dictionary;
+}
+
+// TODO: move to helper functions pragma
+-(void) updateTaskArrays
+{
+	NSMutableArray *fromArray = [[NSMutableArray alloc] init];
+	NSMutableArray *toArray = [[NSMutableArray alloc] init];
+	// This is the array we will move the "fromArray" items we want to keep
+	NSMutableArray *fromArrayReplacement = [[NSMutableArray alloc] init];
+	NSString *status = @"";
+
+	// TODO: can I consolidate this into another function?
+	// loop over the incomplete array
+	fromArray = self.incompleteTasks;
+	for (SMTTask *task in fromArray)
+	{
+		status = [task getStatus];
+		if ([status isEqualToString:@"Overdue"])
+		{
+			// Is now overdue
+			toArray = self.overdueTasks;
+		}
+		else if ([status isEqualToString:@"Complete"])
+		{
+			// Is now complete
+			toArray = self.completeTasks;
+		}
+		else
+		{
+			// Same array, so add to the "newFromArray"
+			toArray = fromArrayReplacement;
+		}
+
+		// Insert into the new array
+		[toArray addObject:task];
+	}
+	// Now set self.incompleteTasks to be the fromArrayReplacement
+	self.incompleteTasks = [[fromArrayReplacement copy] mutableCopy];
+
+	// Reset the fromArrayReplacement
+	[fromArrayReplacement removeAllObjects];
+
+	// loop over the overdue array
+	fromArray = self.overdueTasks;
+	for (SMTTask *task in fromArray)
+	{
+		status = [task getStatus];
+		if ([status isEqualToString:@"Incomplete"])
+		{
+			// Is now incomplete
+			toArray = self.incompleteTasks;
+		}
+		else if ([status isEqualToString:@"Complete"])
+		{
+			// Is now complete
+			toArray = self.completeTasks;
+		}
+		else
+		{
+			// Same array, so add to the "newFromArray"
+			toArray = fromArrayReplacement;
+		}
+
+		// Insert into the new array
+		[toArray addObject:task];
+	}
+
+	// Now set self.overdueTasks to be the fromArrayReplacement
+	self.overdueTasks = [[fromArrayReplacement copy] mutableCopy];
+
+	// Reset the fromArrayReplacement
+	[fromArrayReplacement removeAllObjects];
+
+	// loop over the complete array
+	fromArray = self.completeTasks;
+	for (SMTTask *task in fromArray)
+	{
+		status = [task getStatus];
+		if ([status isEqualToString:@"Incomplete"])
+		{
+			// Is now incomplete
+			toArray = self.incompleteTasks;
+		}
+		else if ([status isEqualToString:@"Overdue"])
+		{
+			// Is now overdue
+			toArray = self.overdueTasks;
+		}
+		else
+		{
+			// Same array, so add to the "newFromArray"
+			toArray = fromArrayReplacement;
+		}
+
+		// Insert into the new array
+		[toArray addObject:task];
+	}
+	// Now set self.completeTasks to be the fromArrayReplacement
+	self.completeTasks = [[fromArrayReplacement copy] mutableCopy];
+
+	// Reset the fromArrayReplacement
+	[fromArrayReplacement removeAllObjects];
+
+	// Now save all 3 arrays
+	[self saveTasks:self.incompleteTasks forDefaultKey:INCOMPLETETASKS_KEY];
+	[self saveTasks:self.completeTasks forDefaultKey:COMPLETETASKS_KEY];
+	[self saveTasks:self.overdueTasks forDefaultKey:OVERDUETASKS_KEY];
+	
 }
 
 -(void)updateTaskCompletion:(SMTTask *)task forIndexPath:(NSIndexPath *)indexPath
