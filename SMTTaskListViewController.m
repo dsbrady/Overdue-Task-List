@@ -18,9 +18,8 @@
 
 /*
 	TODOs:
-	* Enhance the UI (add icons)
-	* separate arrays for overdue, incomplete, and complete tasks (includes separate table sections in that order)
-	* Mark complete in the edit and detail view
+	* Add settings screen (user defaults) for sort order (alphabetical, date, or manual)
+	* Integrate with Facebook and parse (at the end of the course)
  */
 
 #pragma mark - Lazy instantiation of properties
@@ -174,70 +173,6 @@
 	// Make sure all the tasks are in the proper arrays
 	[self updateTaskArrays];
 
-//	NSMutableArray *originalTaskArray = [[NSMutableArray alloc] init];
-//	NSMutableArray *newTaskArray = [[NSMutableArray alloc] init];
-//	NSString *originalDefaultsKey = @"";
-//	NSString *newDefaultsKey = @"";
-//	NSString *newStatus = [task getStatus];
-//
-//	// TODO: create helper function for this functionality to be used here and when updating a status
-//	// Get the "original" data
-//	if ([task.status isEqualToString:@"Complete"])
-//	{
-//		originalTaskArray = self.completeTasks;
-//		originalDefaultsKey = COMPLETETASKS_KEY;
-//	}
-//	else if ([task.status isEqualToString:@"Overdue"])
-//	{
-//		originalTaskArray = self.overdueTasks;
-//		originalDefaultsKey = OVERDUETASKS_KEY;
-//	}
-//	else
-//	{
-//		originalTaskArray = self.incompleteTasks;
-//		originalDefaultsKey = INCOMPLETETASKS_KEY;
-//	}
-//
-//	// Get the "destination" array, etc.
-//	if ([newStatus isEqualToString:@"Complete"])
-//	{
-//		newTaskArray = self.completeTasks;
-//		newDefaultsKey = COMPLETETASKS_KEY;
-//	}
-//	else if ([newStatus isEqualToString:@"Overdue"])
-//	{
-//		newTaskArray = self.overdueTasks;
-//		newDefaultsKey = OVERDUETASKS_KEY;
-//	}
-//	else
-//	{
-//		newTaskArray = self.incompleteTasks;
-//		newDefaultsKey = INCOMPLETETASKS_KEY;
-//	}
-//
-//	// Save the task's status (now that we don't need the old value
-//	task.status = [task getStatus];
-//
-//	NSLog(@"%@",originalTaskArray);
-//	NSLog(@"%@",newTaskArray);
-//	// If the two arrays are different, move from the original to the new
-//	if (originalTaskArray != newTaskArray)
-//	{
-//		[originalTaskArray removeObjectAtIndex:indexPath.row];
-//		[newTaskArray addObject:task];
-//	}
-//
-//	NSLog(@"%@",originalTaskArray);
-//	NSLog(@"%@",newTaskArray);
-//	NSLog(@"%@",indexPath);
-//	SMTTask *taskToUpdate = originalTaskArray[indexPath.row];
-//	taskToUpdate.title = task.title;
-//	taskToUpdate.taskDescription = task.taskDescription;
-//	taskToUpdate.dueDate = task.dueDate;
-//	taskToUpdate.isComplete = task.isComplete;
-//	taskToUpdate.status = [taskToUpdate getStatus];
-
-//	[self saveTasks:originalTaskArray forDefaultKey:originalDefaultsKey];
 	[self.taskTableView reloadData];
 }
 
@@ -463,15 +398,11 @@
 								 TASK_DESCRIPTION: task.taskDescription,
 								 TASK_DUE_DATE: task.dueDate,
 								 TASK_IS_COMPLETE: @(task.isComplete)
-								 // TODO: remove
-								 //								 ,
-//								 TASK_STATUS: task.status
 								 };
 
 	return dictionary;
 }
 
-// TODO: move to helper functions pragma
 -(void) updateTaskArrays
 {
 	NSMutableArray *fromArray = [[NSMutableArray alloc] init];
@@ -581,24 +512,10 @@
 
 -(void)updateTaskCompletion:(SMTTask *)task forIndexPath:(NSIndexPath *)indexPath
 {
-	// TODO: save tasks with multiple sections/arrays
-	// Get the stored tasks arrays (from and to)
-	int fromSectionNumber = (int)indexPath.section;
-	NSString *fromDefaultKey = [self getTaskDefaultKey:fromSectionNumber];
-
-	NSMutableArray *fromTasks = [self getTaskArrayBySection:fromSectionNumber];
-	NSMutableArray *fromSavedTasks = [[NSUserDefaults standardUserDefaults] objectForKey:fromDefaultKey];
-
 	// Update the current task's completion status by flipping the current value
 	task.isComplete = !task.isComplete;
 
-	NSString *newStatus = [task getStatus];
-	NSLog(@"%@",newStatus);
-//	// Update the savedTasks object with the new task
-//	savedTasks[indexPath.row] = [self taskAsPropertyList:task];
-//
-////	[[NSUserDefaults standardUserDefaults] setObject:savedTasks forKey:USER_TASKS_KEY];
-//	[[NSUserDefaults standardUserDefaults] synchronize];
+	[self updateTaskArrays];
 
 	[self.taskTableView reloadData];
 }

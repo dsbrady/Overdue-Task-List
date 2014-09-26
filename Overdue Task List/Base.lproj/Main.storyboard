@@ -48,6 +48,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-J7-Mdj">
+                                <rect key="frame" x="88" y="290" width="144" height="30"/>
+                                <state key="normal" title="Mark Complete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleTaskStatus:" destination="xmb-3l-un5" eventType="touchUpInside" id="5gs-cx-hdv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -63,6 +72,7 @@
                         <outlet property="descriptionLabel" destination="wZE-qj-6eU" id="vaH-3G-oNU"/>
                         <outlet property="dueDateLabel" destination="dSc-1Z-Y2E" id="F05-y6-Pyp"/>
                         <outlet property="statusLabel" destination="sQp-k4-K8O" id="Oay-Nb-1fP"/>
+                        <outlet property="taskStatusButton" destination="XnH-J7-Mdj" id="lap-jE-bUQ"/>
                         <outlet property="titleLabel" destination="sHP-aZ-6KL" id="0gz-01-4Rh"/>
                         <segue destination="Sd2-c6-jY6" kind="push" identifier="toEditTask" id="Tey-Wl-qlB"/>
                     </connections>
@@ -116,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMh-7Q-Zgn">
-                                <rect key="frame" x="59" y="466" width="62" height="30"/>
+                                <rect key="frame" x="59" y="518" width="62" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -125,12 +135,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-lU-qnM">
-                                <rect key="frame" x="215" y="466" width="46" height="30"/>
+                                <rect key="frame" x="215" y="518" width="46" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="updateTask:" destination="Sd2-c6-jY6" eventType="touchUpInside" id="sDu-Rg-pu5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cq-uf-26t">
+                                <rect key="frame" x="88" y="466" width="144" height="30"/>
+                                <state key="normal" title="Mark Complete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleTaskStatus:" destination="Sd2-c6-jY6" eventType="touchUpInside" id="90U-cK-Dji"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,6 +159,7 @@
                     <connections>
                         <outlet property="descriptionField" destination="SZp-WE-uPk" id="sTS-cj-fYc"/>
                         <outlet property="dueDatePicker" destination="TfA-7A-Ql4" id="p8w-kr-sSV"/>
+                        <outlet property="taskStatusButton" destination="0cq-uf-26t" id="Lfd-E0-XJ9"/>
                         <outlet property="titleField" destination="UfI-KP-Onx" id="NBo-dH-X9z"/>
                     </connections>
                 </viewController>

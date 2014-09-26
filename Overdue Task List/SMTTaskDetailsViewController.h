@@ -13,6 +13,7 @@
 @protocol SMTTaskDetailsViewControllerDelegate <NSObject>
 
 -(void)updateTask:(SMTTask *)task forIndexPath:(NSIndexPath *)indexPath;
+-(void)updateTaskCompletion:(SMTTask *)task forIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -25,9 +26,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dueDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UIButton *taskStatusButton;
 
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 - (IBAction)goToEditTask:(UIBarButtonItem *)sender;
+- (IBAction)toggleTaskStatus:(UIButton *)sender;
 
 @end

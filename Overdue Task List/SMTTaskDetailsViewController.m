@@ -39,14 +39,17 @@
 	if (self.task.isComplete)
 	{
 		self.statusLabel.text = @"Complete";
+		[self.taskStatusButton setTitle:@"Mark Incomplete" forState:UIControlStateNormal];
 	}
 	else if ([self.task.dueDate compare:[NSDate date]] == NSOrderedAscending)
 	{
 		self.statusLabel.text = @"Overdue";
+		[self.taskStatusButton setTitle:@"Mark Complete" forState:UIControlStateNormal];
 	}
 	else
 	{
 		self.statusLabel.text = @"Incomplete";
+		[self.taskStatusButton setTitle:@"Mark Complete" forState:UIControlStateNormal];
 	}
 }
 
@@ -82,6 +85,10 @@
 	[self performSegueWithIdentifier:@"toEditTask" sender:self.task];
 }
 
+- (IBAction)toggleTaskStatus:(UIButton *)sender {
+	[self toggleEditTaskStatus:self.task];
+}
+
 #pragma mark - SMTEditTaskViewControllerDelegate
 -(void)saveTask:(SMTTask *)task
 {
@@ -95,6 +102,12 @@
 
 	// Now save the data
 	[self.delegate updateTask:self.task forIndexPath:self.selectedIndexPath];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)toggleEditTaskStatus:(SMTTask *)task
+{
+	[self.delegate updateTaskCompletion:self.task forIndexPath:self.selectedIndexPath];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 @end

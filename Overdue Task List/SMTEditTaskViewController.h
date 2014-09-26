@@ -15,6 +15,7 @@
 
 -(void)saveTask:(SMTTask *)task;
 -(void)didCancel;
+-(void)toggleEditTaskStatus:task;
 
 @end
 
@@ -26,8 +27,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) IBOutlet UITextView *descriptionField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *dueDatePicker;
+@property (strong, nonatomic) IBOutlet UIButton *taskStatusButton;
 
 - (IBAction)cancelEdit:(UIButton *)sender;
 - (IBAction)updateTask:(UIButton *)sender;
+- (IBAction)toggleTaskStatus:(UIButton *)sender;
 
 @end

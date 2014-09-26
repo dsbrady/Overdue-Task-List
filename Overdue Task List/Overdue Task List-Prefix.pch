@@ -14,8 +14,6 @@
 #define TASK_DESCRIPTION @"taskDescription"
 #define TASK_DUE_DATE @"dueDate"
 #define TASK_IS_COMPLETE @"isComplete"
-// TODO: remove
-//#define TASK_STATUS @"status"
 
 #define INCOMPLETETASKS_KEY @"Incomplete Tasks Array"
 #define COMPLETETASKS_KEY @"Complete Tasks Array"

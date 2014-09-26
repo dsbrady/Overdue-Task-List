@@ -31,6 +31,19 @@
 	self.titleField.text = self.task.title;
 	self.descriptionField.text = self.task.taskDescription;
 	self.dueDatePicker.date = self.task.dueDate;
+
+	if (self.task.isComplete)
+	{
+		[self.taskStatusButton setTitle:@"Mark Incomplete" forState:UIControlStateNormal];
+	}
+	else if ([self.task.dueDate compare:[NSDate date]] == NSOrderedAscending)
+	{
+		[self.taskStatusButton setTitle:@"Mark Complete" forState:UIControlStateNormal];
+	}
+	else
+	{
+		[self.taskStatusButton setTitle:@"Mark Complete" forState:UIControlStateNormal];
+	}
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,5 +75,11 @@
 	self.task.taskDescription = self.descriptionField.text;
 	self.task.dueDate = self.dueDatePicker.date;
 	[self.delegate saveTask:self.task];
+}
+
+- (IBAction)toggleTaskStatus:(UIButton *)sender
+{
+	[self.delegate toggleEditTaskStatus:self.task];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 @end

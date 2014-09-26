@@ -64,8 +64,6 @@
 	addedTask.taskDescription = self.descriptionField.text;
 	addedTask.dueDate = self.dueDatePicker.date;
 	addedTask.isComplete = NO;
-// TODO: remove
-//	addedTask.status = [addedTask getStatus];
 
 	return addedTask;
 }

@@ -21,4 +21,6 @@
 - (IBAction)goToAddTask:(UIBarButtonItem *)sender;
 - (IBAction)showReorderView:(UIBarButtonItem *)sender;
 
+-(void)updateTaskCompletion:(SMTTask *)task forIndexPath:(NSIndexPath *)indexPath;
+
 @end
